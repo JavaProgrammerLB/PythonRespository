@@ -20,13 +20,19 @@ def countFileType(lis):
             fileType = getFileType(filename)
             #print('{}的文件类型为{}'.format(filename,fileType))
             numCodeLines =  countCodeLine(filename)
+            print("{}文件的代码行数为：{}".format(filename,numCodeLines))
             if fileType in d:
-                if d[fileType] != None:
-                    d[fileType] += 1
-                if d2[fileType] != None:
-                    d2[fileType] += numCodeLines
+                print('d的值为{}'.format(d[fileType]!=None))
+                print('d2的值为{}'.format(d2[fileType]!=None))
+                print(type(d2[fileType]))
+                if d[fileType] == None:
+                    pass
                 else:
-                    print('{}的行数为None'.format(filename))
+                    d[fileType] += 1
+                if d2[fileType] == None:
+                    pass
+                else:
+                    d2[fileType] += numCodeLines
             else:
                 d[fileType] = 1
                 d2[fileType] = numCodeLines
@@ -62,13 +68,15 @@ def countCodeLine(s):
         fh = open(s)
         #统计文件行数
         lines = len(fh.readlines())
-        return lines
         #关闭文件
         fh.close()
+        return lines
     except PermissionError as e:
         print('{}文件打不开'.format(s))
+        #return lines
     except ValueError:
         print('{}文件在io的时候出错'.format(s))
+        #return lines
 
 if __name__ == '__main__':
     main()
