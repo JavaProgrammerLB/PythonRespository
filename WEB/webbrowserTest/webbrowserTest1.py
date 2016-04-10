@@ -40,7 +40,7 @@ def exCustome():
     # domain = ('joke','kidding','xiao','smile')
     # domain = ('as','person')
     # domain = ("book",'music','love','happy','honest')
-    domain = ('sing','dance','work','study')
+    domain = ('sing','dance','work','study','berkerly')
     topDomain = parseStr2Set('cn','com','de','net','org','fi','no','me','jp','io','co.jp','edu')
     explore(domain,topDomain)
     # exploreWithNum(topDomain)
